@@ -1,7 +1,7 @@
-var myCanvas = document.createElement('canvas');
+let myCanvas = document.createElement('canvas');
 document.body.appendChild(myCanvas);
 
-var myConfetti = confetti.create(myCanvas, { resize: true });
+let myConfetti = confetti.create(myCanvas, { resize: true });
 
 
 function play_animation() {
@@ -19,4 +19,26 @@ function play_animation() {
     }, 1000);
 }
 
-// play_animation()
+let text_container = document.querySelector(".text")
+let card_container = document.querySelector(".card")
+
+let animation = false // set it to true for oning animation
+
+if (animation){
+    text_container.style.display = "none"
+    card_container.style.display = "none"
+    
+    let envelope = document.querySelector(".box");
+    envelope.onclick = ()=>{
+        let image = document.querySelector(".image");
+        let cover = document.querySelector(".cover");
+        
+        play_animation()
+        
+        image.classList.add("image_animation")
+        cover.classList.add("cover_animation")
+    
+        text_container.style.display="flex"
+        card_container.style.display="flex"
+    }
+}

@@ -19,6 +19,7 @@ canvas{
     /* for animation of canifetti */
     /* display none stops the animation so make absolute so that it does not take space and do its job */
     position: absolute;
+    z-index: -1;
 }
 
 /* Envelope */
@@ -79,7 +80,7 @@ canvas{
     transition: 2s 1.25s ease;
 }
 
-.box:hover .cover{
+.cover_animation{
     transform: rotateX(270deg);
     transition: 1s ease;
 }
@@ -99,7 +100,7 @@ canvas{
     box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.75);
 }
 
-.box:hover .image{
+.image_animation{
     transform: translateY(-100px);
     transition: 1s 1s ease-in;
 }
