@@ -23,7 +23,7 @@ canvas{
 }
 
 /* Envelope */
-.text , .envelope , .card{
+.text , .envelope , .card , .wish_gallery{
     width: 100%;
     display: flex;
     align-items: center;
@@ -214,6 +214,91 @@ canvas{
     opacity: 100%;
 }
 
+
+
+/* wish gallery */
+.wish_gallery{
+    position: relative;
+    min-height: 100vh;
+    background-color: #000;
+    background:  linear-gradient(rgba(5, 5, 5, 0.466), rgba(0, 0, 0, 0.6)), url('img/stars.jpg');
+    animation: bg_anim alternate-reverse 100s linear infinite;
+    overflow: hidden;
+}
+@keyframes bg_anim {
+    0%{
+        background-position:bottom ;
+    }
+    50%{
+        background-position: top;
+    }
+    75%{
+        background-position: left;
+    }
+    70%{
+        background-position: top;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+.wish{
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    bottom: 0;
+    display: flex;
+}
+
+.wish-img{
+    margin: auto;
+    width: 20%;
+}
+
+.balloon-group{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.balloon{
+    width: 10%;
+    animation: balloon_anim infinite 20s linear;
+    transition: 1s;
+    opacity: 0;
+}
+
+@keyframes balloon_anim {
+    0%{
+        /* transform: translateY(); */
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-90vh);
+        opacity: 0;
+    }
+}
+.balloon-group img:nth-child(1){
+    animation-delay: 1s;
+}
+.balloon-group img:nth-child(2){
+    animation-delay: 2s;
+}
+.balloon-group img:nth-child(3){
+    animation-delay: 3s;
+}
+.balloon-group img:nth-child(4){
+    animation-delay: 4s;
+}
 /* Media query */
 @media screen and (max-width:700px) {
     .details{
@@ -227,6 +312,9 @@ canvas{
         transform: rotateZ(-90deg);
     }
     .bday_boy{
+        width: 50%;
+    }
+    .wish-img{
         width: 50%;
     }
 }
